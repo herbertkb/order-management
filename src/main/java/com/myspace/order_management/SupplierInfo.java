@@ -7,29 +7,75 @@ package com.myspace.order_management;
 @javax.persistence.Entity
 public class SupplierInfo implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "SUPPLIERINFO_ID_GENERATOR")
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(sequenceName = "SUPPLIERINFO_ID_SEQ", name = "SUPPLIERINFO_ID_GENERATOR")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "SUPPLIERINFO_ID_GENERATOR")
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(sequenceName = "SUPPLIERINFO_ID_SEQ", name = "SUPPLIERINFO_ID_GENERATOR")
+	private java.lang.Long id;
 
-    public SupplierInfo() {
-    }
-    
-    public SupplierInfo(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "delivery date")
+	private java.util.Date deliveryDate;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "best offer")
+	private double offer;
 
+	@org.kie.api.definition.type.Label(value = "selected")
+	private boolean selected;
 
+	@org.kie.api.definition.type.Label(value = "user")
+	private java.lang.String user;
 
+	public SupplierInfo() {
+	}
+
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.util.Date getDeliveryDate() {
+		return this.deliveryDate;
+	}
+
+	public void setDeliveryDate(java.util.Date deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}
+
+	public double getOffer() {
+		return this.offer;
+	}
+
+	public void setOffer(double offer) {
+		this.offer = offer;
+	}
+
+	public boolean isSelected() {
+		return this.selected;
+	}
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
+
+	public java.lang.String getUser() {
+		return this.user;
+	}
+
+	public void setUser(java.lang.String user) {
+		this.user = user;
+	}
+
+	public SupplierInfo(java.lang.Long id, java.util.Date deliveryDate,
+			double offer, boolean selected, java.lang.String user) {
+		this.id = id;
+		this.deliveryDate = deliveryDate;
+		this.offer = offer;
+		this.selected = selected;
+		this.user = user;
+	}
 
 }

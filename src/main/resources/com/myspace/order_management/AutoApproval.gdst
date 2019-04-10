@@ -24,7 +24,7 @@
     </attribute-column52>
     <attribute-column52>
       <typedDefaultValue>
-        <valueString>	first-hit-policy-group approval</valueString>
+        <valueString>first-hit-policy-group approval</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>

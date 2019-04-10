@@ -7,29 +7,113 @@ package com.myspace.order_management;
 @javax.persistence.Entity
 public class OrderInfo implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "ORDERINFO_ID_GENERATOR")
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(sequenceName = "ORDERINFO_ID_SEQ", name = "ORDERINFO_ID_GENERATOR")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "ORDERINFO_ID_GENERATOR")
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(sequenceName = "ORDERINFO_ID_SEQ", name = "ORDERINFO_ID_GENERATOR")
+	private java.lang.Long id;
 
-    public OrderInfo() {
-    }
-    
-    public OrderInfo(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "category")
+	private java.lang.String category;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "item name")
+	private java.lang.String item;
 
+	@org.kie.api.definition.type.Label(value = "approved")
+	private java.lang.Boolean managerApproval;
 
+	@org.kie.api.definition.type.Label(value = "order id")
+	private long orderId;
 
+	@org.kie.api.definition.type.Label(value = "price")
+	private double price;
+
+	@org.kie.api.definition.type.Label(value = "rejection reason")
+	private java.lang.String rejectionReason;
+
+	@org.kie.api.definition.type.Label(value = "urgency")
+	private java.lang.String urgency;
+
+	public OrderInfo() {
+	}
+
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.lang.String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(java.lang.String category) {
+		this.category = category;
+	}
+
+	public java.lang.String getItem() {
+		return this.item;
+	}
+
+	public void setItem(java.lang.String item) {
+		this.item = item;
+	}
+
+	public java.lang.Boolean getManagerApproval() {
+		return this.managerApproval;
+	}
+
+	public void setManagerApproval(java.lang.Boolean managerApproval) {
+		this.managerApproval = managerApproval;
+	}
+
+	public long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(long orderId) {
+		this.orderId = orderId;
+	}
+
+	public double getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public java.lang.String getRejectionReason() {
+		return this.rejectionReason;
+	}
+
+	public void setRejectionReason(java.lang.String rejectionReason) {
+		this.rejectionReason = rejectionReason;
+	}
+
+	public java.lang.String getUrgency() {
+		return this.urgency;
+	}
+
+	public void setUrgency(java.lang.String urgency) {
+		this.urgency = urgency;
+	}
+
+	public OrderInfo(java.lang.Long id, java.lang.String category,
+			java.lang.String item, java.lang.Boolean managerApproval,
+			long orderId, double price, java.lang.String rejectionReason,
+			java.lang.String urgency) {
+		this.id = id;
+		this.category = category;
+		this.item = item;
+		this.managerApproval = managerApproval;
+		this.orderId = orderId;
+		this.price = price;
+		this.rejectionReason = rejectionReason;
+		this.urgency = urgency;
+	}
 
 }
